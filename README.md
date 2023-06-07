@@ -18,17 +18,10 @@ class Contacte{
     + Adreca: adreca
 }
 class Adreca{
-    + str: pais
-    + str: provincia
-    + str: poblacio
-    + str: codi_postal
-    + str: tipus_via
     + str: nom_via
     + str: nombre_via
     + str: pis
     + str: porta
-    + str: escala
-    + str: edifici
 }
 Persona  <|-- Contacte
 Adreca <-- Contacte
