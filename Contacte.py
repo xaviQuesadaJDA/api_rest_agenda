@@ -10,9 +10,8 @@ class Contacte(Persona):
         super().__init__(nom, cognoms)
         self._telefon = telefon
         self._email = email
-        adreca = Adreca(adreca_nom_via, adreca_nombre_via, 
+        self._adreca = Adreca(adreca_nom_via, adreca_nombre_via, 
                         adreca_pis, adreca_porta)
-        self._adreca = adreca 
 
     @property 
     def telefon(self):
@@ -36,7 +35,7 @@ class Contacte(Persona):
         }    
     
     def __str__(self):
-        return json.dumps(self.get_com_diccionari())
+        return json.dumps(self.get_com_diccionari(), indent=2)
 
 if __name__ == "__main__":
     contacte = Contacte("Xavi", "Quesada", "555-55-55", "mail@google.com", "Pau Claris", "21", "3er", "2ona")
