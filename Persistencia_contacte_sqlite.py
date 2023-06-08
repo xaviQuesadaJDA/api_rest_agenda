@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import sqlite3
-from Contacte import Contacte
-from Persistencia_adreca_sqlite import Persistencia_adreca_sqlite
 
 class Persistencia_contacte_sqlite():
     def __init__(self, ruta_db):
@@ -47,11 +45,4 @@ class Persistencia_contacte_sqlite():
         connexio.close()
         contacte.adreca.desa(id_contacte)
 
-if __name__ == "__main__":
-    mi_persistencia = Persistencia_contacte_sqlite("./test_db.db")
-    mi_persistencia_adreca = Persistencia_adreca_sqlite("./test_db.db")
-    un_contacte = Contacte("Pep", "Bou Company", "555-67-87",
-                           "enric@gmail.com", "Pau Claris", "212", "1er", "2a",
-                           mi_persistencia, mi_persistencia_adreca)
-    un_contacte.desa()
     
