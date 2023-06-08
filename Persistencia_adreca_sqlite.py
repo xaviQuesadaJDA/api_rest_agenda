@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import sqlite3
-from Adreca import Adreca
 
 class Persistencia_adreca_sqlite():
     def __init__(self, ruta_db):

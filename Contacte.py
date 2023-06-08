@@ -40,7 +40,3 @@ class Contacte(Persona):
     
     def __str__(self):
         return json.dumps(self.get_com_diccionari(), indent=2)
-
-if __name__ == "__main__":
-    contacte = Contacte("Xavi", "Quesada", "555-55-55", "mail@google.com", "Pau Claris", "21", "3er", "2ona")
-    print(str(contacte))
