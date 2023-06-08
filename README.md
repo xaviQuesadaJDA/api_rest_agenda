@@ -8,6 +8,9 @@ Desenvolupada durant el curs del SOC al juny de 2023.
 ```mermaid
 classDiagram
 
+class App_agenda{
+    + afegeix_contacte(contacte)
+}
 class Persona{
     + str: nom
     + str: cognoms
@@ -25,4 +28,5 @@ class Adreca{
 }
 Persona  <|-- Contacte
 Adreca <-- Contacte
+App_agenda --> Contacte
 ```
