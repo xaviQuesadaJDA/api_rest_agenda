@@ -4,6 +4,8 @@ import sqlite3
 class Persistencia_adreca_sqlite():
     def __init__(self, ruta_db):
         self._ruta_db = ruta_db
+        conn = self.get_conn()
+        conn.close()
 
     def get_conn(self):
         conn = sqlite3.connect(self._ruta_db)

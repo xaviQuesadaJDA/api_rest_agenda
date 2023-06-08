@@ -28,6 +28,9 @@ class Contacte(Persona):
     
     def desa(self):
         self._persistencia.desa(self)
+
+    def get_llista_contactes(self):
+        return self._persistencia.get_llista()
     
     def get_com_diccionari(self):
         return {
@@ -40,3 +43,13 @@ class Contacte(Persona):
     
     def __str__(self):
         return json.dumps(self.get_com_diccionari(), indent=2)
+
+if __name__ == "__main__":
+    import Persistencia_adreca_sqlite
+    import Persistencia_contacte_sqlite
+    pc = Persistencia_contacte_sqlite.Persistencia_contacte_sqlite("test.db")
+    pa = Persistencia_adreca_sqlite.Persistencia_adreca_sqlite("test.db")
+    contacte = Contacte("nom", "cognoms", "telefon", "email", "nom_via", "numero", "pis", "porta", pc, pa)
+    contacte.desa()
+    contacte.get_llista_contactes()
+    

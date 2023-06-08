@@ -30,8 +30,7 @@ class Test_App_agenda():
         conn.close()
         return n
     
-    def test_afegir_contacte(self):
-        self.drop_table_contactes()
+    def afegeix_un_contacte(self):
         per_contacte = Persistencia_contacte_sqlite(RUTA_DB_TEST)
         per_adreca = Persistencia_adreca_sqlite(RUTA_DB_TEST)
         un_contacte = Contacte("Josep", 
@@ -45,5 +44,16 @@ class Test_App_agenda():
                                per_contacte, 
                                per_adreca)
         un_contacte.desa()
+        return un_contacte
+    
+    def test_afegir_contacte(self):
+        self.drop_table_contactes()
+        self.afegeix_un_contacte()
         assert self.llegeix_contactes() > 0
-        assert True
+
+    def test_llegir_contactes(self):
+        self.drop_table_contactes()
+        contacte = self.afegeix_un_contacte()
+        llista = contacte.get_llista_contactes()
+        assert len(llista) > 0
+
