@@ -30,3 +30,5 @@ Persona  <|-- Contacte
 Adreca <-- Contacte
 App_agenda --> Contacte
 ```
+
+:)
